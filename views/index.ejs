@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+    </style>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="index__navbar">
+        <img src="https://docrdsfx76ssb.cloudfront.net/static/1603899179/pages/wp-content/uploads/2019/02/bitly.png"
+            alt="" class="index__bitlyLogo" onclick="home()" />
+        <button type="button" class="index__shortnerLink btn btn-primary">SHORTEN</button>
+    </div>
+
+    <div class="index__landingElement">
+        <img src="https://docrdsfx76ssb.cloudfront.net/static/1603899179/pages/wp-content/uploads/2020/05/illo-mobile-810x480-1.jpg"
+            class="index__qouteImage" id="index__quoteImageMob" />
+
+        <div class="index__quoteLeft">
+            <h1 class="index__quote">Short links, big results</h1>
+            <h2 class="index__subQuote">A URL shortener built with powerful tools to help you grow and protect your
+                brand.</h2>
+            <a href="#urlShortener">
+                <button type="button" class="index__shortnerLink-Q index__shortnerLink btn btn-primary">Get started for
+                    free</button>
+            </a>
+            <br>
+        </div>
+
+        <div>
+            <img src="https://docrdsfx76ssb.cloudfront.net/static/1603899179/pages/wp-content/uploads/2020/05/illo-mobile-810x480-1.jpg"
+                class="index__qouteImage" id="index__quoteImageDesk" />
+        </div>
+    </div>
+
+
+    <div class="urlShortnerParent" id="urlShortener">
+        <div class="container">
+            <br>
+            <form action="/shortUrls" method="post" class="my-4 form-inline">
+                <label for="fullUrl" class="sr-only">URL</label>
+                <input required placeholder="URL" type="url" name="fullUrl" id="fullUrl" class="form-control mr-2 col">
+                <button type="submit" class="btn btn-shorten">Shorten</button>
+            </form>
+
+            <tbody>
+                <div id="shortenedLinks">
+                    <% shortUrls.forEach(shortUrl=> { %>
+                        <tr>
+                            <div class="d-flex resultStats align-items-center">
+                                <th>
+                                    <p href="<%= shortUrl.full %>" target="_blank"
+                                        class="results text-break align-self-center" id="longUrl" style="width: 30rem;">
+                                        <%= shortUrl.full %>
+                                    </p>
+                                </th>
+                                <td>
+                                    <div class="resultStats align-items-center">
+                                        <a href="<%= shortUrl.short %>" target="_blank"
+                                            class="results shortUrlGenerated text-break" id="shortUrlGenerated">
+                                            <span id="discountCode">
+                                                http://b-vn.herokuapp.com/<%= shortUrl.short %>
+                                            </span>
+                                        </a>
+                                        <br>
+                                    </div>
+                                </td>
+                            </div>
+                        </tr>
+                        <br>
+                        <% }) %>
+                </div>
+            </tbody>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

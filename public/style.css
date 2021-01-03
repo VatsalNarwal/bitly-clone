@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800;900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.index__navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.index__bitlyLogo {
+    height: auto;
+    width: 30%;
+    max-width: 100px;
+    margin-left: 5%;
+    margin-top: 22px;
+    margin-bottom: 7px;
+}
+
+.index__shortnerLink {
+    background-color: #2a5bd7 !important;
+    border-radius: 8px;
+    line-height: 1;
+    height: 45px;
+    width: 100px;
+    margin: 15px;
+}
+
+.index__shortnerLink:hover {
+    background-color: #003eda !important;
+}
+
+.index__quote {
+    font-weight: 800;
+    line-height: 56px;
+    color: #252628;
+    font-size: 50px;
+    text-align: left;
+}
+
+.index__quoteLeft {
+    margin-left: 5%;
+    margin-top: 5%;
+    height: 100%;
+}
+
+.index__landingElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.index__subQuote {
+    font-size: 24px;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #56575b;
+}
+
+.index__qouteImage {
+    vertical-align: middle;
+    max-width: 100%;
+    line-height: 1.4em;
+    box-sizing: inherit;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+#index__quoteImageMob {
+    display: none;
+}
+
+.index__shortnerLink-Q {
+    font-size: large;
+    height: 60px;
+    width: 230px;
+    margin-top: 40px;
+}
+
+.urlShortnerParent {
+    background-color: #0B1736;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.resultStats {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fafafa;
+    border-radius: 6px;
+}
+
+#longUrl {
+    text-decoration: none;
+    color: #2d3135;
+    margin-top: 3.2vh;
+}
+
+#fullUrl {
+    position: initial;
+}
+
+#shortUrlGenerated {
+    margin-right: 5px;
+    color: #0236b9;
+}
+
+.copy_Button {
+    color: #2a5bd7;
+    background-color: #edf2fe;
+    border: none;
+}
+
+.copy_Button:hover {
+    background-color: #cedafa;
+    color: #2a5bd7;
+}
+
+.btn-shorten {
+    background-color: #1b3987;
+    color: white;
+}
+
+.btn-shorten:hover {
+    background-color: #2a5bd7 !important;
+    color: white;
+    transition: background 100ms linear;
+    transition-property: background;
+    transition-duration: 100ms;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+.btn:focus {
+    background-color: #2a5bd7;
+    color: white;
+}
+
+#shortenedLinks {
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 810px) {
+    .index__landingElement {
+        flex-direction: column;
+    }
+
+    #index__quoteImageMob {
+        display: block;
+        margin-top: -5vh;
+    }
+
+    #index__quoteImageDesk {
+        display: none;
+    }
+
+    .index__quote {
+        font-size: 38px;
+        font-weight: 900;
+        line-height: 45px;
+    }
+
+    .index__subQuote {
+        font-size: 20px;
+    }
+
+    .index__shortnerLink-Q {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .resultStats {
+        display: block !important;
+        word-wrap: break-word;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+    #longUrl {
+        word-wrap: break-word !important;
+        width: fit-content !important;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5px;
+    }
+
+    .form-inline {
+        display: block;
+    }
+
+    .btn-shorten {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .copy_Button {
+        margin-top: 10px;
+    }
+}
